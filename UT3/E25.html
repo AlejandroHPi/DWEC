@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>E25</title>
+	</head>
+	<body>
+	<!--
+	Ejercicio 25 
+ Crear un prototipo con los datos de un alumno:  
+
+- Nombre y 2 apellidos. 
+- Fecha de nacimiento. 
+- Estado Civil. (S|C|V|P|O). 
+- DNI método para validarlo, utilizando el algoritmo de validación de las letras. 
+
+Crear un prototipo con un array que contenga los modulos de DAW 2º y un segundo array con 
+tres propiedades (primeraEv, segundaEv, terceraEva) especificar el tipo de datos Number. 
+- Crear tres métodos de encapsulación para creación y de lectura de las propiedades 
+primeraEv, segundaEv, terceraEva.  
+Crear tres objetos que cumplan con  él u objetos definidos anteriormente, leer valores desde 
+teclado y depositarlo en el objeto (misDatosAlumno), posteriormente visualizar: 
+a) Los datos del prototipo. 
+b) Los datos del objeto.
+-->
+
+
+<script>
+	
+function Alumno(apellido,apellido2, nombre, fecha, ec,dni) { 
+    this.miApellido = apellido; 
+	this.miApellido2 = apellido2; 
+    this.miNombre = nombre; 
+	this.fecha=fecha;
+    this.ec = ec; 
+    this.dni = dni; 
+} 
+
+var al=new Alumno("apellidoA","apellidoB","nombreA","2017-11-02","S","66098971F");
+
+var evaluacion =[primeraEv, segundaEv, terceraEva];
+var primeraEv =[ 5, 3, 7, 2, 10];
+var segundaEv =[ 4, 1, 4, 5, 2];
+var terceraEva =[ 1, 2, 8, 7, 3];
+
+for(var i=0;i<al.length;i++){
+	document.write(alumno[i]);
+}
+</script>
+
+</body>
+
+</html>

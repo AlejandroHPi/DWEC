@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>E4</title>
+	</head>
+	<body>
+		<!-- Crear un documento web con dos formularios. Uno tendrá la información de alta para 
+registrarse en una empresa de búsqueda de viajes. El segundo formulario tendrá los datos de 
+registro de datos bancarios. El motivo de disponer de dos formularios es debido al 
+procesamiento de la información en el servidor. La página del servidor, alta. Php se encargará 
+de guardar los datos del alta de un nuevo usuario mientras que la página pasarelaPago.php 
+almacenará información de pago asociada al usuario.  -->
+		<form onsubmit="enviar()" id="f1" name="formulario1">						
+				<label for="nombre">Nombre:</label>
+				<input type="text" id="nombre" name="nombre1" placeholder="escribe tu nombre" /><br><br>
+				<label for="apellido1">Apellido 1:</label>
+				<input type="text" id="apellido1" name="apellido1" placeholder="escribe tu apellido"  /><br><br>
+				<label for="apellido2">Apellido 2:</label>
+				<input type="text" id="apellido2" name="apellido2" placeholder="escribe tu apellido"  /><br><br>
+				<label for="tlf">telefono:</label>
+				<input type="text" id="tlf" name="tlf1" placeholder="escribe tu numero de telefono"  /><br><br>																				
+		</form>
+		<form onsubmit="enviar()" id="f2" name="formulario2">						
+				<label for="titular">Titular:</label>
+				<input type="text" id="titular" name="titular1" placeholder="escribe el nombre del titular" /><br><br>
+				<label for="IBAN">IBAN:</label>
+				<input type="text" id="iban" name="iban1" placeholder="escribe tu numero de iban"  /><br><br>																						
+		</form>
+		
+		
+		<button type="button" id="enviar">Enviar</button>	
+		<script>
+			
+		</script>
+	</body>
+</html>

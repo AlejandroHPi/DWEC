@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>UT3-1A</title>
+	</head>
+	<body>
+	<!--
+	Escribe un script que contenga un párrafo y cinco botones. Cada uno de los botones debe tener como 
+etiqueta el nombre de un color y al pulsarlo pondrá el color del párrafo del mismo color que indica. 
+-->
+
+
+<button onclick="myFunction(Azul)">Azul</button>
+<button onclick="myFunction(Rojo)">Rojo</button>
+<button onclick="myFunction(Amarillo)">Amarillo</button>
+<button onclick="myFunction(Naranja)">Naranja</button>
+<button onclick="myFunction(Verde)">Verde</button>
+
+<p id="demo">Texto!</p>
+
+<script>
+Azul="blue";
+Rojo="red";
+Amarillo="yellow";
+Verde="green";
+Naranja="orange";
+
+function myFunction(color) {
+    var str = "Texto!";
+    var result = str.fontcolor(color);
+    document.getElementById("demo").innerHTML = result;
+}
+</script>
+
+</body>
+</html>

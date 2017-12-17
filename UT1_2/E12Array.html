@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>E12</title>
+</head>
+	<body>
+	<!-- Escribe un programa que pida 3 números y escriba en la pantalla el mayor de los tres y el
+menor y nos dé su posición (primero, segundo, tercero) según el orden de lectura.
+-->
+	  <script>
+			var n1;
+			var n2;
+			var n3;
+			var mayor;
+			var menor;
+			var posmay;
+			var posmen;
+			
+			n1=prompt('Ingrese el numero 1:','');
+			n2=prompt('Ingrese el numero 2:','');
+			n3=prompt('Ingrese el numero 3:','');
+			//alert("has introducido los numeros"+n1+","+n2+","+n3+",");
+			n1=parseInt(n1);
+			n2=parseInt(n2);
+			n3=parseInt(n3);	
+			mayor=n1;
+			menor=n2;
+			var nums=new Array[n1,n2,n3];
+			
+			for(var i=0;i<nums.length;i++){			
+				if(nums[i]>mayor){
+					mayor=nums[i];
+					posmay=i;
+				}else if(nums[i]<menor){
+					menor=nums[i];
+					posmen=i;
+				}
+			}
+			document.write("El menor es "+menor+" en posicion "+posmen+" el mayor es "+mayor+" en posicion "+posmay);
+			
+	  </script>
+	</body>
+</html>

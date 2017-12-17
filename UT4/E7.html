@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+ 
+</head>
+
+
+<body>
+
+  <form  onsubmit="validar()" id="formulario">
+	Seleccionar un tipo de tarjeta<br />
+	<select name="tarjeta" id="lista">    
+       <option value="Mastercard" selected="selected">Mastercard</option>
+       <option value="Visa">Visa</option>
+       <option value="AmericanExpress">American Express</option>
+	   <option value="Discover">Discover</option>
+   </select>
+	Numero de tarjeta:<br />
+	<input type="text" id="numero" /><br />
+	
+	<button type="button" id="bValidar">Validar</button>
+	
+	<button type="button" id="cancelar">Cancelar</button>	
+	<input type="submit">	
+  </form>
+  
+</body>
+	<script>
+		function validar(){	
+			var correcto=true;
+			var nTarjeta=document.getElementById('numero').value;			
+			if(nTarjeta!=""){
+				var lista = document.getElementById('lista');
+				var tarjeta = lista.selectedIndex;
+				//alert(lista[tarjeta].value);
+				
+				switch(lista[tarjeta].value){
+					case "Mastercard":
+						//alert(nTarjeta.length);
+						if(nTarjeta.length!=16){
+							correcto=false;
+						}						
+					var patron = /(^34||/^37);
+					var result = pattern.test(nTarjeta);
+					if (result === false){					 
+						correcto=false;
+					}
+					break;
+					case "Visa":
+						if(nTarjeta.length!=16||nTarjeta.length!=13){
+							correcto=false;
+						}
+					break;
+					case "AmericanExpress":
+						if(nTarjeta.length!=15){
+							correcto=false;
+						}
+					break;
+					case "Discover":
+						if(nTarjeta.length!=16){
+							correcto=false;
+						}
+					break;
+				}
+			}else{
+				correcto=false;
+			}
+			
+			if(correcto==false){
+				alert("Introduzca un numero de tarjeta valido");
+			}else{
+				alert("tarjeta valida");
+			}
+		}
+		
+	</script>
+</html>

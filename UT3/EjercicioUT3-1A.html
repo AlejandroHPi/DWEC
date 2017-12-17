@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>UT3-1A</title>
+	</head>
+	<body>
+	<!--Asignar valores de inicialización desde un bucle a las dos matrices A[3][3] y B[3][3] -->
+	  <script>
+		var A=new Array(3);
+		var B=new Array(3);
+		var C=new Array(3);
+		var n=1;
+		var n2=2;
+		var n3=0;
+	
+		for (i = 0; i < 3; i++){ 
+			A[i]=new Array(3); 
+			B[i]=new Array(3);
+			for(j = 0; j < 3; j++){ 
+				A[i][j]=n;
+				B[i][j]=n2;
+				n+=2;
+				n2+=3;		
+			
+			}
+		}
+		<!--Fila1 * columna1 ->f1*c2 ->f1*c3 etc f2*c1 f2*c2
+		-->
+		<!--Multiplicacion-->
+		for(l=0;l<3;l++){
+		
+			for(o=0;o<3;o++){
+			
+				for (f=0;f<3;f++){
+				
+					for(c=0;c<3;c++){			
+						
+						C[l][o]+=A[f][c]*B[c][f];
+						
+					}
+				}
+			}
+		
+		}
+		alert(C[l][o]);
+		alert("2");
+	  </script>
+	</body>
+</html>

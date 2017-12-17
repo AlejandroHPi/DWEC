@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>E8</title>
+	</head>
+	<body>
+		<!--Crear el código JavaScript que cumpla con las siguientes funciones:
+a) Si la longitud (número de caracteres) del campo nombre es mayor de 15 o igual a cero,
+el formulario no se enviará.
+b) Si la longitud (número de caracteres) del campo apellidos es mayor de 30 o igual a
+cero, el formulario no se enviará.
+c) Si la longitud (número de caracteres) del campo email es mayor de 35 o igual a cero, el
+formulario no se enviará. Si el email no contiene el carácter @ el formulario no se
+enviará.
+d) Si se produce cualquiera de las circunstancias anteriores, debe aparecer un recuadro
+con color de fondo naranja y texto negro a la derecha de la casilla de introducción de
+datos, informando del problema detectado en ese campo (si es que ese campo
+presenta algún problema).
+Nota: Todos los mensajes se deben mostrar sólo si el campo es erróneo después de pulsado el
+botón enviar, y deben desaparecer si el usuario realiza un nuevo intento y el campo es
+correcto. Los mensajes se incorporarán al DOM (no serán mensajes usando alert).
+Ejemplo de ejecución. El usuario deja el nombre, apellidos y correo electrónico vacíos. A la
+derecha de las casillas de introducción de datos aparecerá: El nombre no puede estar vacío.
+Los apellidos no pueden estar vacíos. El correo electrónico no puede estar vacío. -->
+		<form onsubmit="comprobar()" id="f1" name="formulario1">						
+				<label for="nombre">Nombre:</label>
+				<input type="text" id="nombre" name="nombre1" placeholder="escribe tu nombre" /><br><br>				
+				<label for="apellidos">Apellidos:</label>
+				<input type="text" id="apellidos" name="apellidos" placeholder="escribe tus apellidos"  /><br><br>
+				<label for="email">Email:</label>
+				<input type="text" id="email" name="email" placeholder="escribe tus email"  /><br><br>				
+			<input type="submit">
+			
+		</form>
+		
+		<script>
+			var formulariop = document.getElementById("f1");			
+			function comprobar(){				
+				/*
+				if(document.getElementById('nombre').value.length>15||document.getElementById('nombre').value.length==0){
+					    var error = "<p>Error en el nombre</p>";
+						var nombre=document.getElementById("nombre").value;
+						document.getElementById("nombre").appendChild(error);
+						alert(nombre);																				
+				}*/
+				
+				var h = document.createElement("p"); 
+				var error = document.createTextNode("<p>Error</p>"); 
+				
+				
+				//var error = "<p>Error en el nombre</p>";
+
+				var node = document.createElement("p");                 // Create a <li> node
+				var textnode = document.createTextNode("Error");         // Create a text node
+				node.appendChild(textnode);                              // Append the text to <li>
+				document.getElementById("nombre").appendChild(node);     // Append <li> to <ul> with id="myList"
+				
+				document.getElementById("nombre").appendChild(error);
+				if(document.getElementById('nombre').value.length>15||document.getElementById('nombre').value.length==0){
+					document.getElementById('nombre').appendChild(error);
+					alert(document.getElementById("nombre").value.length);
+				}
+			}
+		</script>
+	</body>
+</html>

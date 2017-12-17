@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>UT3-1A</title>
+	</head>
+	<body>
+	<!--Crear una ordenación utilizando el algoritmo de la Burbuja.
+La Ordenación de burbuja (Bubble Sort en inglés) es un sencillo algoritmo de ordenamiento.
+Funciona revisando cada elemento de la lista que va a ser ordenada con el siguiente,
+intercambiándolos de posición si están en el orden equivocado.
+Es necesario revisar varias veces toda la lista hasta que no se necesiten más intercambios, lo cual
+significa que la lista está ordenada.
+Este algoritmo obtiene su nombre de la forma con la que suben por la lista los elementos durante
+los intercambios, como si fueran pequeñas "burbujas".
+También es conocido como el método del intercambio directo. Dado que solo usa comparaciones
+para operar elementos, se lo considera un algoritmo de comparación, siendo el más sencillo de
+implementar-->
+	  <script>
+		var desorden =[99,1,84,57,2,411,75];
+		document.write("desordenado: ");
+		for(var i=0;i<desorden.length-1;i++){
+			document.write(desorden[i]);
+		}
+		document.write("<br>");
+		do{
+			var ordenado=false;
+			for(var i=0;i<desorden.length-1;i++){
+				if(desorden[i] > desorden[i+1]){
+					var temporal = desorden[i];
+					desorden[i]=desorden[i+1];
+					desorden[i+1]=temporal;
+					ordenado=true;
+				}
+			}
+		}while(ordenado);
+		document.write("ordenado: ");
+		for(var i=0;i<desorden.length-1;i++){
+			document.write(desorden[i]);
+		}
+	  </script>
+	</body>
+</html>

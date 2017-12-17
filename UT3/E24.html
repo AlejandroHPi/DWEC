@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>E24</title>
+	</head>
+	<body>
+	<!--
+	24. Crear un prototipo (nombreAlumno, Edad, Sexo, estudios[“ESO”,”SMR”,”BACHILLERATO”]
+y además con una función cierre o cerradura, que se encuentre dentro de un prototipo y
+además que la función cerradura contenga las propiedades, algunas como consecuencia del
+cálculo de valores (notaMediaESO=5, Moda=7, FrecuenciaModa=3). Los valores se encuentran
+almacenados en una var MatrizNotas[]. Crear el prototipo y realizar una instancia a valores
+con un alumno y 5 notas.
+-->
+
+
+
+
+<script>
+function alumno(nombreAlumno, Edad, Sexo, estudios) {
+    this.nombreAlumno=nombreAlumno;
+	this.Edad=Edad;
+	this.Sexo=Sexo;
+	this.estudios=estudios;
+}
+var total=0;
+var oAlumno=new alumno("nombre",20,"Masculino","ESO");
+var MatrizNotas=[1,5,8,9,4]
+console.log("Notas:",MatrizNotas); 
+for(var i=0;i<MatrizNotas.length;i++){
+	total+=MatrizNotas[i];
+	
+}
+
+console.log("Media:",total/i); 
+</script>
+
+</body>
+
+</html>

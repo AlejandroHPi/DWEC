@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>Bucle14</title>
+	</head>
+	<body>
+
+	  <script>
+		var cadena="";
+		var filas;
+		var n=1;		
+		var v=5;	
+		var espacio=5;
+		
+		do{
+			filas=prompt('Ingrese filas(3-10):','');
+			
+		}while(filas<3||filas>10);
+		<!----primera piramide -->
+			for(var i=1;i<=filas;i++){
+				for(var k=1;k<=50 - espacio;k++){
+					cadena+="&nbsp";
+				}
+				espacio++;
+				for(var j=1;j<=n;j++){
+					cadena=cadena+'*'+'&nbsp';
+				}
+				cadena=cadena+'</br>';
+				n++;		
+			}		
+		document.write(cadena);
+		
+		<!----segunda piramide -->
+		cadena="";
+		for(var i=n;i>=0;i--){
+				for(var k=50 - espacio;k>0;k--){
+					cadena+="&nbsp";
+				}
+				espacio--;
+				for(var j=1;j<=n;j++){
+					cadena=cadena+'*'+'&nbsp';
+				}
+				cadena=cadena+'</br>';
+				n--;		
+			}		
+		document.write(cadena);
+	  </script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>E20</title>
+	</head>
+	<body>
+	<!--
+	Definir prototipos para realizar instancias a  diferentes objetos de configuración del sistema. 
+Definir que es propiedad y que es método, si es público o privado. 
+-->
+
+	
+    <p></p>
+	 
+	  
+
+<script>
+	function PuertoSerie(modeCom,Baud,Parity,Data,Stop,to,xon,odsr,octs,dtr,rts,idsr){ 
+		 this.modeCom=modeCom;
+		 this.Baud=Baud;
+		 this.Parity=Parity;
+		 this.Data=Data;
+		 this.Stop=Stop;
+		 this.to=to;
+		 this.xon=xon;
+		 this.odsr=odsr;
+		 this.octs=octs;
+		 this.dtr=dtr;
+		 this.rts=rts;
+		 this.idsr=idsr;
+	} 
+	function ModoPuerto(estado){
+		this.estado=estado;
+	}
+	function PuertoPrnCom(modeLptn){
+		this.modeLptn=modeLptn;
+	}
+	function consolaPais(cp){
+		this.cp=cp;
+	}
+	function consolaEstado(cp){
+		this.cp=cp;
+	}
+	function consolaLineas(lines){
+		this.lines=lines;
+	}
+	function tecladoVelRep(rate,delay){
+		this.rate=rate;
+		this.delay;
+	}
+</script>
+
+</body>
+
+</html>

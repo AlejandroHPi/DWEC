@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>E5</title>
+</head>
+	<body>
+	<!--  Escribe un programa que pida una frase y escriba las vocales que aparecen -->
+	  <script>
+		var cadena=" ";
+		var vocales=" ";
+		var aparecen=" ";
+		vocales=0;
+		cadena=prompt('Ingrese una frase:');
+		cadena.toString();
+			
+		
+		for(let i=0;i<cadena.length;i++){
+		
+			switch(cadena[i]){
+				case 'a':
+					aparecen=aparecen+'a '				
+					vocales+=1;				
+				break;
+				case 'e':
+					aparecen=aparecen+'e '				
+					vocales+=1;
+				break;
+				case 'i':
+					aparecen=aparecen+'i '			
+					vocales+=1;
+				break;
+				case 'o':
+					aparecen=aparecen+'o '				
+					vocales+=1;
+				break;
+				case 'u':
+					aparecen=aparecen+'u '				
+					vocales+=1;
+				break;
+			}
+			
+		}				
+		alert("aparecen "+vocales+" Son: "+aparecen);
+	  </script>
+	</body>
+</html>

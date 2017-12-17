@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>E21</title>
+	</head>
+	<body>
+	<!--
+	22. Crear tres ejemplos en los que realiza la ejecución del operador in.
+a) Dada una matriz [“alumnos”, “profesores”, “aulas”, “mesas”, “sillas”, “pizarras”]
+b) Comprobar que dada la posición 5 contiene valor.
+c) Comprobar que la posición 0 del array es una cadena.
+d) Buscar “aulas” dentro de la matriz.
+-->
+
+
+
+
+<script>
+	var array1 = new Array("alumnos", "profesores", "aulas", "mesas", "sillas", "pizarras");
+	alert ("posicion 5 contine valor:");
+	alert(5 in array1);
+	//alert(typeof(0 in array1));//esto devuelve si esta el valor por lo que su tipo es boolean
+	alert(typeof(array1[0]));
+	alert("aulas" in array1);// devuelve false (se ha de  decir el número de índice, no su valor)
+</script>
+
+</body>
+
+</html>

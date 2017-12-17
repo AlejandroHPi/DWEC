@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>UT3-1A</title>
+	</head>
+	<body>
+	<!--
+	 Calcular el D.C. del CCC de una cuenta Bancaria y expresarlo una vez calculado. 
+-->
+
+	<p>
+        <label for="Entidad">Entidad</label>
+        <label for="Oficina">Oficina</label>
+        <label for="DC">DC</label>
+        <label for="Cuenta">Numero de Cuenta</label>
+    </p>
+    <p>
+        <input type="text" name="Entidad" maxlength="4" size="4" id="Entidad" />
+        <input type="text" name="Oficina" maxlength="4" size="4" id="Oficina" />
+        <input type="text" name="DC"  maxlength="2" size="2" id="DC"/>
+        <input type="text" name="Cuenta" maxlength="10" size="10" id="Cuenta"/><br />    
+    </p>
+	  <button onclick="calcularDC()">Calcular</button>
+
+
+<script>
+	function calcularDC(){
+		//variables de los digitos de control
+		var dc1=0;
+		var dc2=0;
+		//tomamos los valores de los campos y los separamos por el espacio
+		var entidad=document.getElementById("Entidad").value.split("");
+		var oficina=document.getElementById("Oficina").value.split("");		
+		var cuenta=document.getElementById("Cuenta").value.split("");
+		var dc;
+		//calculamos los digitos de control de la entidad
+		dc1 += parseInt(entidad[0]) * 4;
+		dc1 += parseInt(entidad[0]) * 8;
+		dc1 += parseInt(entidad[0]) * 5;
+		dc1 += parseInt(entidad[0]) * 10;
+		//calculamos los digitos de control de la oficina
+		dc1 += oficina[0] *9;
+		dc1 += oficina[1] *7;
+		dc1 += oficina[2] *3;
+		dc1 += oficina[3] *6;
+		//dividimos el dc entre once y se lo restamos a once si nos da diez lo ponemos a uno
+		dc1 %=11;
+		dc1=11-dc1;
+		if(dc1==10){
+			dc1=1;
+		}
+		//calculamos el segundo digito de control
+		dc2 += parseInt(cuenta[0])*1;
+		dc2 += parseInt(cuenta[1])*2;
+		dc2 += parseInt(cuenta[2])*4;
+		dc2 += parseInt(cuenta[3])*8;
+		dc2 += parseInt(cuenta[4])*5;
+		dc2 += parseInt(cuenta[5])*10;
+		dc2 += parseInt(cuenta[6])*9;
+		dc2 += parseInt(cuenta[7])*7;
+		dc2 += parseInt(cuenta[8])*3;
+		dc2 += parseInt(cuenta[9])*6;
+		//dividimos el dc2 entre once y se lo restamos a once si nos da diez lo ponemos a uno
+		dc2 %=11;
+		dc2=11-dc2;
+		if(dc2==10){
+			dc2=1;
+		}
+		//multiplicamos el dc1 y le sumamos el dc2 para hayar el digito de control
+		dc=dc1*10+dc2;
+		//mostramos el digito de control
+		document.getElementById("DC").value = dc;
+	}
+	
+</script>
+
+</body>
+</html>

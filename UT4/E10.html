@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>E8</title>
+	</head>
+	<body>
+		<!--¿Cómo recuperar un dígito perdido de un número de tarjeta?
+Escribir un formulario con tenga dos campos uno para introducir todos
+los número visibles y el segundo para indicar que número falta y la
+posición que ocupa, contando los dígitos de izquierda a derecha.
+Partimos de: este algoritmo puede echarnos una mano en algún momento.
+Imaginemos que no recordamos un dígito del número de nuestra tarjeta (o que
+dudamos entre varios, que no lo tenemos claro), que recordamos todos los demás y
+que sabemos qué posición ocupa el que se nos ha olvidado. Entonces el algoritmo de
+Luhn nos ayuda a recuperar ese número.
+Tomemos como ejemplo el número
+Supongamos que ese es nuestro número de tarjeta, pero que no recordamos qué
+dígito es el que corresponde a la posición que ocupa . Bien, para calcular cuál es ese
+dígito simplemente planteamos el algoritmo de Luhn fijándonos en si ocupa una
+posición par o una impar y recordando que el resultado final debe ser igual a 0 módulo
+10. En nuestro caso nos queda:
+
+Por tanto debe cumplirse que sea un múltiplo de 10. Bueno, no
+exactamente, ya que hay que recordar que si es mayor o igual que 10 hay que
+sumar sus cifras.
+Bueno, vamos a ver qué valor tiene . Por un lado, si : entonces y el
+resultado sería . No.
+ : entonces y el resultado sería . No.
+ : entonces y el resultado sería . No.
+ : entonces y el resultado sería . Si.
+ : entonces y el resultado sería . No.
+Con esto calculamos el dígito que nos faltaba. Era y el número de nuestra tarjeta
+quedaría así:-->
+		<form onsubmit="comprobar()" id="f1" name="formulario1">						
+				<label for="nTarjeta">numero de tarjeta:</label>
+				<input type="text" id="nTarjeta" name="nTarjeta" placeholder="escribe tu numero de tarjeta" /><br><br>				
+				<label for="pFalta">posicion del numero faltante:</label>
+				<input type="text" id="pFalta" name="pFalta" placeholder="escribe la posicion"  /><br><br>
+						
+			<input type="submit">
+			
+		</form>
+		
+		<script>
+			var formulariop = document.getElementById("f1");			
+			function comprobar(){				
+				/*
+				if(document.getElementById('nombre').value.length>15||document.getElementById('nombre').value.length==0){
+					    var error = "<p>Error en el nombre</p>";
+						var nombre=document.getElementById("nombre").value;
+						document.getElementById("nombre").appendChild(error);
+						alert(nombre);																				
+				}*/
+				
+				var h = document.createElement("p"); 
+				var error = document.createTextNode("<p>Error</p>"); 
+				h.appendChild(error); 
+				
+				//var error = "<p>Error en el nombre</p>";
+				document.getElementById("nombre").appendChild(error);
+				if(document.getElementById('nombre').value.length>15||document.getElementById('nombre').value.length==0){
+				}
+			}
+		</script>
+	</body>
+</html>

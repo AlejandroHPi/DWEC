@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>E2</title>
+	</head>
+	<body>
+		<!-- Crear un formulario que solicite los datos de alta de un nuevo alumno en el centro. Los datos 
+que debe solicitar serán: 
+Nombre y apellidos. 
+Titulación en la que se matricula, se presentara como un desplegable. 
+Curso, se incluirán cursos de 1º a 4º 
+Año académico. 
+Para realizar las siguientes validaciones antes de realizar el envío de datos: Un ciclo formativo 
+solamente tiene dos cursos académicos, no se admite un valor para el año académico mayor 
+que el actual. -->
+		<form onsubmit="comprobar()" id="f1" name="formulario1">			
+				
+				<label for="nombre">Nombre:</label>
+				<input type="text" id="nombre" name="nombre1" placeholder="escribe tu nombre" /><br><br>
+				<label for="apellido1">Apellido 1:</label>
+				<input type="text" id="apellido1" name="apellido1" placeholder="escribe tu apellido"  /><br><br>
+				<label for="apellido2">Apellido 2:</label>
+				<input type="text" id="apellido2" name="apellido2" placeholder="escribe tu apellido"  /><br><br>
+				<label for="anyo">Anyo:</label>
+				<input type="text" id="anyo" name="anyo1" placeholder="escribe el anyo actual"  /><br><br>
+				
+				<br>
+				<label for="titulacion">Titulacion:</label>
+				<select name="titulacion" id="titulacion1">    
+					<option value="eso" selected="selected">ESO</option>
+					<option value="bachillerato">Bachillerato</option>
+					<option value="cf">CF</option>
+				</select>
+				<br>
+				<label for="curso">Curso:</label>
+				<select name="curso" id="curso1">    
+					<option value=1 selected="selected">curso 1</option>
+					<option value=2>curso 2</option>
+					<option value=3>curso 3</option>
+					<option value=4>curso 4</option>
+				</select>
+				<br>
+							
+			<input type="submit">
+			
+		</form>
+		
+		<script>
+			var formulariop = document.getElementById("f1");			
+			function comprobar(){							
+				var fecha = new Date();
+				var ano = fecha.getFullYear();
+				//alert(document.getElementById('anyo').value);
+				if(document.getElementById('anyo').value>ano){
+					alert("El valor del campo anyo es erroneo");
+				}
+				//alert(document.getElementById('titulacion1').value);
+				if(document.getElementById('curso1').value>2&&document.getElementById('titulacion1').value=='cf'||document.getElementById('curso1').value>2&&document.getElementById('titulacion1').value=='bachillerato'){
+					alert("El valor del curso es erroneo");
+				}
+			}			
+		</script>
+	</body>
+</html>

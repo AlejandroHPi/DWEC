@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>E21</title>
+	</head>
+	<body>
+	<!--
+	21. Realizar las siguientes ejecuciones con try{}cath{} y recoger el error, el número y mostrar
+una alert con el número de error.
+a) Dividir un número por cero.
+b) Dividir 0 entre 0.
+c) Dividir un número por una cadena.
+d) Restar una cadena vacía a una cadena completa.
+e) Dividir un número por un valor boolean.
+f) Utilizar una cadena de ejercicios anteriores para asignarlo a un array, y comprobar que
+al recorrer el array no se da ninguna situación errónea
+-->
+
+n1=<input id="n1" type="text">
+operando=<select id="operando">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+		</select>
+n2=<input id="n2" type="text">
+<button type="button" onclick="myFunction()">calcular</button>
+<button type="button" onclick="fErrores()">Ver errores</button>
+<p id="mensaje"></p>
+<script>
+	var errores = [];
+	var mensaje, x;
+	var error=false;
+	function myFunction() {
+		mensaje = document.getElementById("mensaje");
+		mensaje.innerHTML = "";
+		n1 = document.getElementById("n1").value;
+		n2 = document.getElementById("n2").value;
+		operando = document.getElementById("operando").value;
+		try { 
+			if(n1!=0&&n2 == 0&&operando=="/") throw "a) Dividir un número por cero.";
+			if(n1==0&&n2==0&&operando=="/") throw "b) Dividir 0 entre 0.";
+			if(!isNaN(n1)&&isNaN(n2)&&operando=="/") throw "c) Dividir un número por una cadena.";
+			if(operando=="-"&&n2=="") throw "d) Restar una cadena vacía a una cadena completa.";
+			if(typeof(n2) === "boolean"&&operando=="/") throw "e) Dividir un número por un valor boolean.";
+		}catch(err){			
+			mensaje.innerHTML = "Error:" + err;				
+			errores.push(err);		
+			error=true;
+		}		
+	}
+	
+	function fErrores(){
+		if(error==true){
+			alert("Errores:");				
+			
+			
+			for(i=0;i<errores.length;i++){
+				
+				alert(errores[i]);
+			}
+		}
+	}
+	
+</script>
+
+</body>
+
+</html>

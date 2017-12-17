@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>E3</title>
+	</head>
+	<body>
+		<!-- Realizar la petición mediante el método GET, analizando la cadena QueryString generada en 
+la petición.  -->
+		<form onsubmit="enviar()" id="f1" name="formulario1">						
+				<label for="nombre">Nombre:</label>
+				<input type="text" id="nombre" name="nombre1" placeholder="escribe tu nombre" /><br><br>
+				<label for="apellido1">Apellido 1:</label>
+				<input type="text" id="apellido1" name="apellido1" placeholder="escribe tu apellido"  /><br><br>
+				<label for="apellido2">Apellido 2:</label>
+				<input type="text" id="apellido2" name="apellido2" placeholder="escribe tu apellido"  /><br><br>
+				
+				<br>							
+			<!--<input type="submit">-->
+			<button type="button" id="enviar">Enviar</button>			
+		</form>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        alert("Value: " + $("#nombre").val());
+		   alert("Value: " + $("#apellido1").val());
+		      alert("Value: " + $("#apellido2").val());
+    });
+});
+</script>
+</html>

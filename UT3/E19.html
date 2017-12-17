@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>UT3-1A</title>
+	</head>
+	<body>
+	<!--
+	Ejercicio 19 – Definir prototipos 
+
+	Definir prototipos de configuración de red- ConfiRed. 
+	a) Propiedades de ConfiRed 
+	Sufijo DNS específico para la conexión. . : 
+	Dirección IPv4. . . . . . . . . . . . . . : 192.168.3.100 
+	Máscara de subred . . . . . . . . . . . . : 255.255.255.0 
+	Puerta de enlace predeterminada . . . . . : 192.168.3.1 
+	 
+	b) Agregar el método SubredHost, que: defina el número de subredes y de host 
+	disponibles, como propiedades del método, previamente calculadas. 
+-->
+
+	
+    <p>IP
+		<br />    
+		<input type="text" name="ip1" maxlength="3" size="3" id="ip1" />
+		<input type="text" name="ip2" maxlength="3" size="3" id="ip2" />
+		<input type="text" name="ip3" maxlength="3" size="3" id="ip3" />
+		<input type="text" name="ip4" maxlength="3" size="3" id="ip4" />
+		<br />    
+		Mascara
+		<br />    
+		<input type="text" name="ma1" maxlength="3" size="3" id="ma1" />
+		<input type="text" name="ma2" maxlength="3" size="3" id="ma2" />
+		<input type="text" name="ma3" maxlength="3" size="3" id="ma3" />
+		<input type="text" name="ma4" maxlength="3" size="3" id="ma4" />
+		<br />
+		Puerta de enlace
+		<br />    
+		<input type="text" name="pe1" maxlength="3" size="3" id="pe1" />
+		<input type="text" name="pe2" maxlength="3" size="3" id="pe2" />
+		<input type="text" name="pe3" maxlength="3" size="3" id="pe3" />
+		<input type="text" name="pe4" maxlength="3" size="3" id="pe4" />
+		<br />
+    </p>
+	  <button onclick="SubredHost()">Calcular Subredes</button>
+	  
+
+<script>
+	function ConfiRed(ip1,ip2,ip3,ip4){
+		this.ip1=ip1;
+		this.ip2=ip2;
+		this.ip3=ip3;
+		this.ip4=ip4;
+		this.nSubredes=SubredHost();
+	}
+	
+	function ConfiMasc(ma1,ma2,ma3,ma4){
+		this.ma1=ma1;
+		this.ma2=ma2;
+		this.ma3=ma3;
+		this.ma4=ma4;		
+	}
+	
+	function ConfiPe(pe1,pe2,pe3,pe4){
+		
+	}
+	
+	function SubredHost(){
+		//variable que contiene la ip
+		var ip=new ConfiRed(document.getElementById("ip1").value,
+		document.getElementById("ip2").value,document.getElementById("ip3").value,
+		document.getElementById("ip4").value);
+		
+		//variable que contiene la mascara
+		var mascara=new ConfiRed(document.getElementById("ma1").value,
+		document.getElementById("ma2").value,document.getElementById("ma3").value,
+		document.getElementById("ma4").value);
+		
+		//variable que contien la puerta de enlace
+		var puerta=new ConfiRed(document.getElementById("pe1").value,
+		document.getElementById("pe2").value,document.getElementById("pe3").value,
+		document.getElementById("pe4").value);
+		
+	
+		n=0;//variable que almacena el numero de 0s
+		//tomamos los valores de la mascara y los recorremos buscando 0s
+		m1=document.getElementById("ma1").value;
+		for(i=0;i<m1.lenght;i++){
+			if(m1[i]==0){//si encuentra un 0 aumenta el contador
+				n++;
+			}
+		}
+		m2=document.getElementById("ma2").value;
+		for(i=0;i<m2.lenght;i++){
+			if(m2[i]==0){
+				n++;
+			}
+		}
+		m3=document.getElementById("ma3").value;
+		for(i=0;i<m3.lenght;i++){
+			if(m3[i]==0){
+				n++;
+			}
+		}
+		m4=document.getElementById("ma4").value;
+		for(i=0;i<m4.lenght;i++){
+			if(m4[i]==0){
+				n++;
+			}
+		}
+		//calculamos el numero de redes 2^n-2
+		
+	}
+</script>
+
+</body>
+</html>

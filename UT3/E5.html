@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>UT3-1A</title>
+	</head>
+	<body>
+	<!--.Escribir el código de una función a la que se pasa como parámetro un número entero y devuelve
+como resultado una cadena de texto que indica si el número es par o impar. Mostrar por pantalla el
+resultado devuelto por la función. Si se pasa cualquier otro tipo de dato debe saltar a la función
+ErrorTipoDatos() y mostrar el mensaje de error al introducir el tipo de datos.
+
+-->
+	  <script>
+		var n1=prompt("Dame un numero");
+		function par(n1) {
+			if(isNaN(n1)){
+				alert("No es un numero");
+			}else{
+				if(n1%2==0){
+					alert("Par");
+				}else{
+					alert("Impar");
+				}
+			}
+		}
+		par(n1);
+	  </script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>E18</title>
+	</head>
+	<body>
+	<!--
+	Crear una función para convertir a mayúsculas/minúsculas la cadena escrita en un campo de texto de un formulario.
+a) Para ello crear dos botones, un que sea mayúscula y otro minúsculas.
+b) Los botones se tiene que utilizar independientemente en dos campos de texto del formulario, y solo debe afectar al campo del formulario activo.
+Nombre [ ]
+Apellidos [ ]
+Mayus Minus
+-->
+
+	<form>
+		Nombre:<input type="text" id="nombre" onchange="getFoco();" onclick="getFoco('eNombre');"></input>
+		Apellidos:<input type="text" id="apellido" onchange="getFoco();" onclick="getFoco('eApellido');"></input><br>
+		
+		<button type="button" value="mayu" onclick="mayus();" id='bm'>Mayusculas</button>
+		<button type="button" value="minu" onclick="minus();" id='bn'>Minusculas</button>
+	</form>
+       
+
+
+<script>
+	var foco="";
+	function mayus(){
+		if(foco=='nombre'){
+			document.getElementById("nombre").value=document.getElementById("nombre").value.toUpperCase();			
+		}else if(foco=='apellido'){
+			document.getElementById("apellido").value=document.getElementById("apellido").value.toUpperCase();
+		}		
+	}
+	function minus(){
+		if(foco=='nombre'){
+			document.getElementById("nombre").value=document.getElementById("nombre").value.toLowerCase();			
+		}else if(foco=='apellido'){
+			document.getElementById("apellido").value=document.getElementById("apellido").value.toLowerCase();
+		}		
+	}
+	function getFoco(elemento){
+		switch(elemento){
+			case 'eNombre':
+				foco='nombre';
+			break;
+			case 'eApellido':
+				foco='apellido';
+			break;
+		
+		}
+		
+	}
+		
+		
+	
+</script>
+
+</body>
+</html>

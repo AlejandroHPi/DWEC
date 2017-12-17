@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>E21</title>
+	</head>
+	<body>
+	<!--
+	. Utilizar el ejercicio 11 y ubicar 5 puntos de breakpoint. Ejecutar en los cinco navegadores,
+para observar cómo se produce la pausa, y como continuamos a partir del breakpoint.
+Enumerar ejerciUT3-23-11A.html ó ejerciUT3-23-11A.JS,…
+-->
+
+
+
+
+<script>
+	
+	  var frase1="alo.";
+		var frase="Yo creo que la gente, cuando es inteligente y completamente normal, no debe pretender el ser rara y extraña, porque llega al absurdo inventado.";
+		var palabras=frase.split(" ");
+		alert("tu frase tiene un tamano de "+palabras.length+" palabras");
+		alert("tu frase tiene un tamano de "+frase.length+" letras");
+		var contadora=0;
+		var contadore=0;
+		var contadori=0;
+		var contadoro=0;
+		var contadoru=0;
+		var contador=0;
+		var puntuacion=0;
+		var mayus=0;
+		for(i=0;i<=frase.length;i++){
+			if(frase[i]=='a'){
+				contadora++;
+				contador++;
+				debugger;
+			}else if(frase[i]=='e'){
+				contadore++;
+				contador++;
+				debugger;
+			}else if(frase[i]=='i'){
+				contadori++;
+				contador++;
+				debugger;
+			}else if(frase[i]=='o'){
+				contadoro++;
+				contador++;
+				debugger;
+			}else if(frase[i]=='u'){
+				contadoru++;
+				contador++;
+				debugger;
+			}else if(frase[i]=='a&quot'||frase[i]=='\.'||frase[i]=='\,'){
+				puntuacion++;
+				contador++;
+				debugger;
+			}else if(frase[i-1]==null&&frase[i-1]=='\.'&&frase[i]==frase[i].toUpperCase()){
+				mayus++;
+			}
+			
+		}
+		
+		alert("tu frase tiene "+contador+" vocales "+contadora+" a "+contadore+" e "+contadori+" i "+contadoro+" o "+contadoru+" u y "+puntuacion+
+		" puntos y comas "+mayus+" mayusculas comenzando frases");
+	  </script>
+>
+
+</body>
+
+</html>

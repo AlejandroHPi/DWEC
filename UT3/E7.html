@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>UT3-1A</title>
+	</head>
+	<body>
+	<!--
+	Definir una función que determine si la cadena de texto que se le pasa como parámetro es un 
+palíndromo, es decir, si se lee de la misma forma desde la izquierda y desde la derecha. Ejemplo de 
+palíndromo complejo: "La ruta nos aporto otro paso natural". 
+a) Convertir la cadena leída a Mayúsculas/minúsculas. 
+b) Depositar la cadena leída en un array letra a letra, sin espacios (if). 
+c) Duplicar el array a otro array de forma inversa. 
+d) Recorrer el segundo array para comprobar que es igual al primero. 
+-->
+	  <script>
+		var cadena=prompt("Introduce tu cadena");		
+		var i;
+		var j;
+		var iguales=true;
+		<!-- a -->		
+		var minus=cadena.toLowerCase();
+		var mayus=cadena.toUpperCase();
+		alert("mayusculas "+mayus);
+		alert("minusculas "+minus);
+		
+		<!-- b -->	
+		var letras=new Array();
+		for(i=0;i<=cadena.length;i++){
+			if(cadena[i]!=' '){
+				letras.push(cadena[i]);
+			}
+		}
+		alert(letras.toString());
+		
+		<!-- c -->	
+		var inv=new Array();
+		inv=letras.reverse();
+		alert(inv);
+				
+		<!-- d -->
+		for(i=0;i<=cadena.length;i++){
+			for(j=inv.length-1;j>0;j--){					
+				if(cadena[i]!=","||inv[j]!=","){
+					if(cadena[i]!=inv[j]){
+						iguales=false;
+					}				
+				}
+			}
+		}
+		
+		if(iguales==false){
+			alert("Los arrays son distintos");
+		}else{
+			alert("Los arrays son iguales");
+		}
+	  </script>
+	</body>
+</html>

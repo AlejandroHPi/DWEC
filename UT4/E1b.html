@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>E1b</title>
+	</head>
+	<body>
+		<!--1. Un uso habitual de JavaScript con formularios es usar JavaScript para validar que el 
+contenido introducido por el usuarios sea válido. Crea un formulario que conste de 
+cinco campos: nombre, apellidos, email, ciudad y país. Usando el evento onsubmit, 
+realiza la validación para: 
+a) Comprobar que en el momento del envío ninguno de los campos tiene menos de dos 
+caracteres (es decir, si está vacío, contiene una letra o dos letras se considerará no 
+válido) accediendo a los campos mediante document.forms y elements. 
+b) Igual que el apartado a) pero accediendo a los campos directamente usando el 
+atributo name (por ejemplo formularioContacto.apellidos haría alusión a un elemento 
+input cuyo atributo name es apellidos en un formulario cuyo atributo name es 
+formularioContacto)  -->
+		<form onsubmit="comprobar()" id="f1">			
+				
+				<label for="nombre">Nombre:</label>
+				<input type="text" id="nombre" name="nombre1" placeholder="escribe tu nombre" /><br><br>
+				<label for="apellido">Apellido:</label>
+				<input type="text" id="apellido" name="apellido1" placeholder="escribe tu apellido"  /><br><br>
+				<label for="email">Email:</label>
+				<input type="text" id="email" name="email1" placeholder="escribe tu email" /><br><br>
+				<label for="ciudad">Ciudad:</label>
+				<input type="text" id="ciudad" name="ciudad1" placeholder="escribe tu ciudad" /><br><br>
+				<label for="pais">Pais:</label>
+				<input type="text" id="pais" name="pais1" placeholder="escribe tu pais" /><br><br>
+				<br>			
+			<input type="submit">
+		</form>
+		
+		<script>
+			function comprobar(){
+			
+				var formulariop = document.getElementById("f1");
+				
+			
+				if(formulariop.nombre1.value.length<=2){
+					alert("El valor del campo nombre NO es valido");
+				}
+				if(formulariop.nombre1.value.length<=2){
+					alert("El valor del campo apellido NO es valido");
+				}
+				if(formulariop.nombre1.value.length<=2){
+					alert("El valor del campo ciudad NO es valido");
+				}
+				if(formulariop.nombre1.value.length<=2){
+					alert("El valor del campo pais NO es valido");
+				}
+			}
+		</script>
+	</body>
+</html>
